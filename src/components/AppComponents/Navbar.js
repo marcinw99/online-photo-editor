@@ -10,7 +10,11 @@ const Navbar = () => (
       <p>
         Photos delivered by{" "}
         <u>
-          <a href="https://unsplash.com/" target="_blank">
+          <a
+            href="https://unsplash.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Unsplash
           </a>
         </u>
@@ -26,7 +30,7 @@ const Navbar = () => (
       aria-label="Toggle navigation"
     >
       <span className="navbar-toggler-icon">
-        <i class="fas fa-bars" />
+        <i className="fas fa-bars" />
       </span>
     </button>
     <div className="collapse navbar-collapse" id="navbarSupportedContent">

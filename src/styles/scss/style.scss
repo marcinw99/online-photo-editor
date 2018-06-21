@@ -25,6 +25,22 @@ h6 {
   font-weight: 300;
 }
 
+.btn-zoom,
+.btn-edit {
+  color: $white;
+  background: $purple;
+  border: none;
+  font-size: 2.1rem;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  transition: ease-in-out 0.2s;
+  &:hover {
+    color: $purple;
+    background: $white;
+  }
+}
+
 // NAVBAR COLORS
 
 .navbar-transparent {
@@ -100,6 +116,14 @@ h6 {
 // HOME PAGE
 
 [class*="green-box-"] {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 400;
+  }
   min-height: 250px;
   background: $successLight;
   border: 5px dashed $success;
@@ -112,6 +136,26 @@ h6 {
 
 .search-tab input {
   max-width: 350px;
+}
+
+// HOME PAGE - PHOTOS
+
+.photos-grid {
+}
+
+.photo-tile {
+  border: 5px solid rgba(0, 0, 0, 0);
+  position: relative;
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.photo-buttons {
+  position: absolute;
+  bottom: 5%;
+  right: 10%;
 }
 
 @include media-breakpoint-down(sm) {
