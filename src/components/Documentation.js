@@ -1,13 +1,13 @@
 import React, { Component, Fragment } from "react";
 
-class Account extends Component {
+class Documentation extends Component {
   render() {
     return (
       <Fragment>
-        <p>ekran konta</p>
+        <p>ekran dokumentacji</p>
       </Fragment>
     );
   }
 }
 
-export default Account;
+export default Documentation;

@@ -1,16 +1,18 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 
 class Login extends Component {
-  goToApp = () => {
-    this.props.history.push(`/app`);
+  goToPage = name => {
+    this.props.history.push(`/app/${name}`);
   };
   render() {
     return (
-      <div>
+      <Fragment>
         <p>ekran logowania</p>
         <p>albo i rejestrowania</p>
-        <button onClick={this.goToApp}>Go to app</button>
-      </div>
+        <button onClick={() => this.goToPage("home")}>Go to homepage</button>
+        <button onClick={() => this.goToPage("docs")}>Go to docs</button>
+        <button onClick={() => this.goToPage("account")}>Go to account</button>
+      </Fragment>
     );
   }
 }
