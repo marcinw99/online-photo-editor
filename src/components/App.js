@@ -1,13 +1,14 @@
 // React components
 import React, { Component } from "react";
 
-// App components
+// Application components
 import Navbar from "./AppComponents/Navbar";
 import Login from "./Login";
 import Documentation from "./Documentation";
 import Home from "./Home";
 import Account from "./Account";
 import NotFound from "./NotFound";
+import Modal from "./Modal";
 
 // APIs, Helpers
 import Unsplash, { toJson } from "unsplash-js";
