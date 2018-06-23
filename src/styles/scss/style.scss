@@ -26,7 +26,8 @@ h6 {
 }
 
 .btn-zoom,
-.btn-edit {
+.btn-edit,
+.btn-close {
   color: $white;
   background: $purple;
   border: none;
@@ -38,6 +39,9 @@ h6 {
   &:hover {
     color: $purple;
     background: $white;
+  }
+  &:focus {
+    outline: none;
   }
 }
 
@@ -156,6 +160,29 @@ h6 {
   position: absolute;
   bottom: 5%;
   right: 10%;
+}
+
+// MODALS
+
+// ZOOM PHOTO
+
+.modal-zoom-photo {
+  position: fixed;
+  text-align: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  img {
+    height: 100%;
+  }
+  .btn-close {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 @include media-breakpoint-down(sm) {

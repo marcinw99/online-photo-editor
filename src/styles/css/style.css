@@ -8461,7 +8461,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-zoom,
-.btn-edit {
+.btn-edit,
+.btn-close {
   color: #ffffff;
   background: #e00089;
   border: none;
@@ -8473,9 +8474,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-zoom:hover,
-.btn-edit:hover {
+.btn-edit:hover,
+.btn-close:hover {
   color: #e00089;
   background: #ffffff;
+}
+
+.btn-zoom:focus,
+.btn-edit:focus,
+.btn-close:focus {
+  outline: none;
 }
 
 .navbar-transparent {
@@ -8587,6 +8595,27 @@ h1, h2, h3, h4, h5, h6 {
   position: absolute;
   bottom: 5%;
   right: 10%;
+}
+
+.modal-zoom-photo {
+  position: fixed;
+  text-align: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.modal-zoom-photo img {
+  height: 100%;
+}
+
+.modal-zoom-photo .btn-close {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 @media (max-width: 767.98px) {

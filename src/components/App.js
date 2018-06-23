@@ -8,7 +8,6 @@ import Documentation from "./Documentation";
 import Home from "./Home";
 import Account from "./Account";
 import NotFound from "./NotFound";
-import Modal from "./Modal";
 
 // APIs, Helpers
 import Unsplash, { toJson } from "unsplash-js";
@@ -72,4 +71,5 @@ class App extends Component {
     );
   }
 }
+
 export default App;
