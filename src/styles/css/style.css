@@ -8618,6 +8618,119 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateX(-50%);
 }
 
+.editor-container {
+  background: linear-gradient(230deg, #303030 0%, #323232 100%);
+  color: #f5f5f5;
+}
+
+.editor-container h1,
+.editor-container h2,
+.editor-container h3,
+.editor-container h4,
+.editor-container h5,
+.editor-container h6 {
+  font-weight: 400;
+}
+
+.editor-filters {
+  color: #e00089;
+}
+
+.editor-filters-settings {
+  border: 2px solid #e00089;
+  border-radius: 15px;
+}
+
+.editor-filters-settings label {
+  display: block;
+  margin: 0 0 -5px 0;
+  color: #f5f5f5;
+}
+
+.editor-filters-settings input[type="range"] {
+  height: 4px;
+  -webkit-appearance: none;
+  width: 100%;
+  border-radius: 50px;
+}
+
+.editor-filters-settings input[type="range"]:focus {
+  outline: none;
+}
+
+.editor-filters-settings input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  background: #ffffff;
+  border-radius: 50px;
+}
+
+.editor-filters-settings input[type="range"]::-webkit-slider-thumb {
+  height: 20px;
+  width: 20px;
+  border-radius: 50px;
+  background: #e00089;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -7px;
+}
+
+.editor-filters-settings input[type="range"]:focus::-webkit-slider-runnable-track {
+  background: #ffffff;
+}
+
+.editor-filters-settings input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  background: #ffffff;
+  border-radius: 50px;
+}
+
+.editor-filters-settings input[type="range"]::-moz-range-thumb {
+  height: 20px;
+  width: 20px;
+  border-radius: 50px;
+  background: #e00089;
+  cursor: pointer;
+}
+
+.editor-filters-settings input[type="range"]::-ms-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+.editor-filters-settings input[type="range"]::-ms-thumb {
+  margin-top: 1px;
+  height: 20px;
+  width: 20px;
+  border-radius: 50px;
+  background: #e00089;
+  cursor: pointer;
+}
+
+.editor-photo p {
+  margin: 0;
+}
+
+.editor-photo p a {
+  color: #f5f5f5;
+}
+
+.editor-photo-container {
+  width: 100%;
+  background: #212121;
+}
+
+.editor-photo-container img {
+  max-height: 700px;
+}
+
 @media (max-width: 767.98px) {
   .navbar-brand .logo {
     font-size: 1.5rem;

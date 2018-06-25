@@ -1,8 +1,13 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class Photo extends Component {
   zoomPhoto = () => {
     this.props.zoomPhoto(this.props.background.urls.full);
+  };
+
+  editPhoto = () => {
+    this.props.editPhoto(this.props.background);
   };
 
   render() {
@@ -14,9 +19,11 @@ class Photo extends Component {
           <button className="btn-zoom" onClick={this.zoomPhoto}>
             <i className="fas fa-search-plus" />
           </button>
-          <button className="btn-edit ml-3">
-            <i className="fas fa-edit" />
-          </button>
+          <Link to="/app/edit">
+            <button className="btn-edit ml-3" onClick={this.editPhoto}>
+              <i className="fas fa-edit" />
+            </button>
+          </Link>
         </div>
       </div>
     );

@@ -6,8 +6,13 @@ class PhotosGrid extends Component {
   componentDidMount() {
     this.props.dispatch({ type: "ADD_NEWEST_PHOTOS" });
   }
+
   zoomPhoto = photo => {
     this.props.dispatch({ type: "SHOW_MODAL", payload: photo });
+  };
+
+  editPhoto = photo => {
+    this.props.dispatch({ type: "EDIT_PHOTO", payload: photo });
   };
 
   render() {
@@ -17,6 +22,7 @@ class PhotosGrid extends Component {
           <Photo
             key={key}
             zoomPhoto={this.zoomPhoto}
+            editPhoto={this.editPhoto}
             background={this.props.photos.photos[key]}
           />
         ))}

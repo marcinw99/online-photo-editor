@@ -7,6 +7,7 @@ import Login from "./Login";
 import Documentation from "./Documentation";
 import Home from "./Home";
 import Account from "./Account";
+import Editor from "./Editor";
 import NotFound from "./NotFound";
 
 // APIs, Helpers
@@ -46,6 +47,8 @@ const Page = ({ match }) => {
       return <Account />;
     case "docs":
       return <Documentation />;
+    case "edit":
+      return <Editor />;
     default:
       return <NotFound />;
   }
@@ -58,7 +61,7 @@ class App extends Component {
         <BrowserRouter>
           <div className="main-container">
             <Navbar />
-            <div className="container app-container p-4">
+            <div className="container app-container p-0">
               <Switch>
                 <Route exact path="/" component={Login} />
                 <Route path="/app/:pageName" component={Page} />
