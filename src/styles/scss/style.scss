@@ -288,10 +288,18 @@ h6 {
 }
 
 .editor-photo-container {
+  position: relative;
   width: 100%;
   background: $dark;
   img {
     max-height: 700px;
+  }
+  #canvas {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 

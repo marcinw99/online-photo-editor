@@ -8723,12 +8723,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .editor-photo-container {
+  position: relative;
   width: 100%;
   background: #212121;
 }
 
 .editor-photo-container img {
   max-height: 700px;
+}
+
+.editor-photo-container #canvas {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 @media (max-width: 767.98px) {

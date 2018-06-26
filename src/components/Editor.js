@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import Filters from "./EditorComponents/Filters";
+import Canvas from "./EditorComponents/Canvas";
 
 import { initialFiltersValues, initialCSSFilters } from "./data/filters";
 
@@ -13,7 +14,9 @@ class Editor extends Component {
     CSSReadyFilters,
     photo: {
       authorName: "",
-      created_at: ""
+      created_at: "",
+      width: 0,
+      height: 0
     }
   };
 
@@ -35,21 +38,23 @@ class Editor extends Component {
     });
   };
 
-  componentDidMount() {
-    if (this.props.editor.photo !== undefined) {
-      const authorName = this.props.editor.photo.user.name;
-      const created_at = this.props.editor.photo.created_at.substring(0, 10);
-      this.setState({
-        photo: {
-          authorName,
-          created_at
-        }
-      });
-    }
-  }
+  handleImageLoaded = photo => {
+    const authorName = this.props.editor.photo.user.name;
+    const created_at = this.props.editor.photo.created_at.substring(0, 10);
+    const width = photo.target.width;
+    const height = photo.target.height;
+    this.setState({
+      photo: {
+        authorName,
+        created_at,
+        height,
+        width
+      }
+    });
+  };
 
   render() {
-    return this.props.editor.photo !== undefined ? (
+    return this.props.editor.photo ? (
       <div className="px-4 py-2 editor-container">
         <div className="row">
           <div className="col-3 editor-filters">
@@ -62,12 +67,17 @@ class Editor extends Component {
             </div>
           </div>
           <div className="col-9 editor-photo text-center">
-            <div className="editor-photo-container">
+            <div className="editor-photo-container" id="editor-photo-container">
               <img
                 src={this.props.editor.photo.urls.full}
                 alt="pls w8"
                 className="img-fluid"
+                onLoad={this.handleImageLoaded}
                 style={this.state.CSSReadyFilters}
+              />
+              <Canvas
+                height={this.state.photo.height}
+                width={this.state.photo.width}
               />
             </div>
             <div className="d-flex justify-content-between">
