@@ -4,19 +4,16 @@ class Canvas extends Component {
   state = {
     height: 0,
     width: 0,
-    tool: "brush",
-    size: 5,
-    color: "#000000",
+    tool: this.props.tool,
+    size: this.props.size,
+    color: this.props.color,
     isDrawing: false
   };
 
   static getDerivedStateFromProps(props, state) {
-    console.log(props, state);
-    if (props.height !== state.height || props.width !== state.width) {
-      return {
-        height: props.height,
-        width: props.width
-      };
+    console.log({ ...props }, { ...state });
+    if (props !== state) {
+      return { ...props };
     }
     return null;
   }

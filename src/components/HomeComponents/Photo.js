@@ -16,11 +16,14 @@ class Photo extends Component {
       <div className="d-inline-block photo-tile col-12 col-md-4">
         <img src={thumbnail} alt="foteczka" />
         <div className="d-inline-block photo-buttons">
-          <button className="btn-zoom" onClick={this.zoomPhoto}>
+          <button className="btn-custom btn-zoom" onClick={this.zoomPhoto}>
             <i className="fas fa-search-plus" />
           </button>
           <Link to="/app/edit">
-            <button className="btn-edit ml-3" onClick={this.editPhoto}>
+            <button
+              className="btn-custom btn-edit ml-3"
+              onClick={this.editPhoto}
+            >
               <i className="fas fa-edit" />
             </button>
           </Link>

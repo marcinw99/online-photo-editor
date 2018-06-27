@@ -26,9 +26,7 @@ h6 {
   font-weight: 300;
 }
 
-.btn-zoom,
-.btn-edit,
-.btn-close {
+.btn-custom {
   color: $white;
   background: $purple;
   border: none;
@@ -283,6 +281,60 @@ h6 {
     margin: 0;
     a {
       color: $light;
+    }
+  }
+  .photo-info {
+    font-weight: 300;
+  }
+
+  .canvas-controls {
+    button {
+      margin: 0 5px;
+      color: $dark;
+      background: $light;
+      &:hover,
+      &.active {
+        color: $light;
+        background: $dark;
+      }
+    }
+    #btn-color {
+      margin: 0;
+      padding: 0;
+      color: $dark;
+      background: $light;
+      border: none;
+      font-size: 1rem;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      &:focus {
+        outline: none;
+      }
+    }
+    #btn-color::-webkit-color-swatch-wrapper,
+    #btn-color::-webkit-color-swatch {
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      padding: 0;
+      margin: 0;
+    }
+    input[type="number"] {
+      font-weight: 700;
+      margin: 0 5px;
+      color: $dark;
+      background: $light;
+      border: none;
+      font-size: 2.1rem;
+      border-radius: 50px;
+      width: 70px;
+      height: 60px;
+      transition: ease-in-out 0.2s;
+      &:focus {
+        outline: none;
+      }
     }
   }
 }
