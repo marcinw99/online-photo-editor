@@ -20,7 +20,7 @@ class ModalZoomPhoto extends Component {
           alt="Full size"
           className="img-fluid"
         />
-        <button className="btn-close" onClick={this.closeModal}>
+        <button className="btn-custom btn-close" onClick={this.closeModal}>
           <i class="fas fa-times" />
         </button>
       </Fragment>

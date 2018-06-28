@@ -11,7 +11,6 @@ class Canvas extends Component {
   };
 
   static getDerivedStateFromProps(props, state) {
-    console.log({ ...props }, { ...state });
     if (props !== state) {
       return { ...props };
     }
@@ -39,20 +38,29 @@ class Canvas extends Component {
     const coords = this.getMousePosition(event);
     this.ctx.beginPath();
     this.ctx.moveTo(coords.x, coords.y);
+    this.ctx.globalCompositeOperation = "source-over";
   };
 
   onMouseUp = event => {
     this.setState({
       isDrawing: false
     });
+    if (this.state.tool === "text") {
+      const coords = this.getMousePosition(event);
+      const text = prompt("Enter text:") || "Hello wurld";
+      this.ctx.fillText(text, coords.x, coords.y);
+    }
   };
 
   onMouseMove = event => {
     if (this.state.isDrawing) {
-      console.log("moving!");
       const coords = this.getMousePosition(event);
 
       if (this.state.tool === "brush") {
+        this.ctx.lineTo(coords.x, coords.y);
+        this.ctx.stroke();
+      } else if (this.state.tool === "eraser") {
+        this.ctx.globalCompositeOperation = "destination-out";
         this.ctx.lineTo(coords.x, coords.y);
         this.ctx.stroke();
       }
@@ -65,10 +73,22 @@ class Canvas extends Component {
     });
   };
 
+  saveImageToUrl = () => {
+    var link = document.getElementById("download-photo");
+    const canvas = document.getElementById("canvas");
+    link.href = canvas.toDataURL();
+    link.download = "project.png";
+  };
+
   render() {
     if (this.ctx) {
       this.ctx.strokeStyle = this.state.color;
       this.ctx.lineWidth = this.state.size;
+      this.ctx.font = `${this.state.size}px Arial`;
+      this.ctx.fillStyle = this.state.color;
+    }
+    if (this.props.saveOnDevice === true) {
+      this.saveImageToUrl();
     }
     return (
       <canvas

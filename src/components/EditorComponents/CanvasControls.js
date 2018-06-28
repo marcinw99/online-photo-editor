@@ -21,13 +21,13 @@ const CanvasControls = props => {
       >
         <i className="fas fa-eraser" />
       </button>
-      <button className="btn-custom" onClick={() => handleToolsChange("move")}>
-        <i className="fas fa-arrows-alt" />
-      </button>
       <button className="btn-custom" onClick={() => handleToolsChange("text")}>
         <i className="fas fa-font" />
       </button>
-      <button className="btn-custom" onClick={() => handleToolsChange("brush")}>
+      <button
+        className="btn-custom active"
+        onClick={() => handleToolsChange("brush")}
+      >
         <i className="fas fa-paint-brush" />
       </button>
       <input

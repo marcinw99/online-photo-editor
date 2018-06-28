@@ -27,6 +27,7 @@ h6 {
 }
 
 .btn-custom {
+  cursor: pointer;
   color: $white;
   background: $purple;
   border: none;
@@ -289,17 +290,18 @@ h6 {
 
   .canvas-controls {
     button {
+      cursor: pointer;
       margin: 0 5px;
       color: $dark;
       background: $light;
-      &:hover,
-      &.active {
+      &:hover {
         color: $light;
         background: $dark;
       }
     }
     #btn-color {
-      margin: 0;
+      cursor: pointer;
+      margin: 0 5px;
       padding: 0;
       color: $dark;
       background: $light;
@@ -322,6 +324,7 @@ h6 {
       margin: 0;
     }
     input[type="number"] {
+      cursor: pointer;
       font-weight: 700;
       margin: 0 5px;
       color: $dark;
@@ -334,6 +337,17 @@ h6 {
       transition: ease-in-out 0.2s;
       &:focus {
         outline: none;
+      }
+    }
+  }
+  .editor-controls {
+    button {
+      margin: 0 5px;
+      a {
+        color: $light;
+        &:hover {
+          color: $purple;
+        }
       }
     }
   }

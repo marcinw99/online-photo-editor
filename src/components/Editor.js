@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
+import { initialFiltersValues, initialCSSFilters } from "./data/filters";
+
 import Filters from "./EditorComponents/Filters";
 import Canvas from "./EditorComponents/Canvas";
 import CanvasControls from "./EditorComponents/CanvasControls";
 import PhotoInfo from "./EditorComponents/PhotoInfo";
-
-import { initialFiltersValues, initialCSSFilters } from "./data/filters";
+import EditorControls from "./EditorComponents/EditorControls";
 
 var CSSReadyFilters = initialCSSFilters;
 const filtersValues = initialFiltersValues;
@@ -23,7 +24,8 @@ class Editor extends Component {
     project: {
       tool: "brush",
       size: 5,
-      color: "#ff0000"
+      color: "#ff0000",
+      saveOnDevice: false
     }
   };
 
@@ -61,10 +63,17 @@ class Editor extends Component {
   };
 
   handleControlsChange = (control, value) => {
-    console.log(control, value);
     this.setState({
       project: {
         [control]: value
+      }
+    });
+  };
+
+  saveImageToUrl = () => {
+    this.setState({
+      project: {
+        saveOnDevice: true
       }
     });
   };
@@ -83,7 +92,13 @@ class Editor extends Component {
             </div>
           </div>
           <div className="col-9 editor-photo">
-            <CanvasControls handleControlsChange={this.handleControlsChange} />
+            <div className="controls-panel d-flex justify-content-between">
+              <CanvasControls
+                handleControlsChange={this.handleControlsChange}
+              />
+              <EditorControls saveImageToUrl={this.saveImageToUrl} />
+            </div>
+
             <div
               className="editor-photo-container text-center"
               id="editor-photo-container"
