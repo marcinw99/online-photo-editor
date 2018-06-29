@@ -73,23 +73,13 @@ class Canvas extends Component {
     });
   };
 
-  saveImageToUrl = () => {
-    var link = document.getElementById("download-photo");
-    const canvas = document.getElementById("canvas");
-    link.href = canvas.toDataURL();
-    link.download = "project.png";
-  };
-
   render() {
     if (this.ctx) {
       this.ctx.strokeStyle = this.state.color;
       this.ctx.lineWidth = this.state.size;
       this.ctx.font = `${this.state.size}px Arial`;
-      this.ctx.fillStyle = this.state.color;
     }
-    if (this.props.saveOnDevice === true) {
-      this.saveImageToUrl();
-    }
+
     return (
       <canvas
         id="canvas"

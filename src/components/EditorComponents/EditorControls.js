@@ -10,9 +10,7 @@ const EditorControls = props => {
         <i className="fas fa-share" />
       </button>
       <button className="btn-custom" onClick={props.saveImageToUrl}>
-        <a id="download-photo">
-          <i className="fas fa-save" />
-        </a>
+        <i className="fas fa-save" />
       </button>
     </div>
   );

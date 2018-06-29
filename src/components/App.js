@@ -48,7 +48,7 @@ const Page = ({ match }) => {
     case "docs":
       return <Documentation />;
     case "edit":
-      return <Editor />;
+      return <Editor downloadSinglePhoto={unsplash.photos.downloadPhoto} />;
     default:
       return <NotFound />;
   }
